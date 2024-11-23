@@ -279,4 +279,5 @@ class classeDeLogin {
 
     }
 }
-export {classeDeLogin};
+//nao se usa exportar, pois o módulo está online
+//export {classeDeLogin};
