@@ -6,29 +6,26 @@ class classeDeLogin {
     static formatacoesCss = null;
     static chameParaConfirmar = null;
     static chameParaNegar = null;
-    // static recebeMatricula = null;
-    // static recebePassword = null;
-    //static procura_Essa_Matricula_No_Servidor = "111";
-    //static procura_Essa_Senha_No_Servidor = "999";
 
     static configuracoes = {
         cor: "orange",
-        img: "./images/glp.png"
+        img: "./images/glp.png" //imagem está na pasta raiz do projeto
     };
 
-    static linkConexaoAoServidor = "https://230a19dd-a01a-4faa-b3b2-580727027f3a-00-2bx1vfdz5435d.worf.replit.dev/";
+    //acesso ao servidor criado no replit.com
+    //static linkConexaoAoServidor = "https://230a19dd-a01a-4faa-b3b2-580727027f3a-00-2bx1vfdz5435d.worf.replit.dev/";
 
     //funcao aguarda receber dois param vindo do docum aula141 que importou a classeDeLogin acessando assim essa funcao
     static funcaoLogin = (parametroConfirmar, parametroNegar, recebeParametroConfiguracao = null) => {
         console.log(recebeParametroConfiguracao);
-        if (recebeParametroConfiguracao != null) { //se receber o valor nulo ??????
+        if (recebeParametroConfiguracao != null) {
             this.configuracoes = recebeParametroConfiguracao; //this.propriedade passa a ter o valor nulo tambem
         }
         //quando as propried abaixo q possui uma arrow-function for chamada, ela executa tmb a funcao entre parenteses como 'callback'
         this.chameParaConfirmar = () => {parametroConfirmar()};
         this.chameParaNegar = () => {parametroNegar()};
-        //o link completo de acesso eh construido a partir da url do servidor concatenado as propried buscadas nele
         
+        //o link completo de acesso eh construido a partir da url do servidor concatenado as propried buscadas nele
         //this.linkConexaoAoServidor += `?matricula=${this.procura_Essa_Matricula_No_Servidor}&senha=${this.procura_Essa_Senha_No_Servidor}`;
         
         //--------------------------------------------------------------------------------------------------------
@@ -151,44 +148,41 @@ class classeDeLogin {
 
         //-----------------------------------------------------
         const campoLoginN = document.createElement("div");
-        campoLoginN.setAttribute("id", "campoLogin"); //ATENCAO, ISSO NAO EXISTE NAS FORMATACOES DO CSS
+        campoLoginN.setAttribute("id", "campoLogin");
         campoLoginN.setAttribute("class", "campoLogin");
         conteinerLogin.appendChild(campoLoginN); //insere este elem como 4º, indentado dentro da tag de id e class = "conteinerLogin"
 
         
         const Username = document.createElement("label");
         Username.innerHTML = "Username";
-        campoLoginN.appendChild(Username); //insere este elem como 4º, indentado dentro da tag de id e class = "conteinerLogin"
+        campoLoginN.appendChild(Username); //insere este elem como 5º, indentado dentro da tag de id e class = "campoLoginN"
 
         const inputUsername = document.createElement("input");
         inputUsername.setAttribute("id", "formularioUsername");
         inputUsername.setAttribute("type", "text");
         inputUsername.setAttribute("name", "formularioUsername");
-        campoLoginN.appendChild(inputUsername); //insere este elem como 4º, indentado dentro da tag de id e class = "conteinerLogin"
+        campoLoginN.appendChild(inputUsername); //insere este elem como 6º, indentado dentro da tag de id e class = "campoLoginN"
         //------------------------------------------------
  
-
-        //ATENCAO: OS COMENTARIOS ESTADO DUPLICADOS!
         const campoLoginS = document.createElement("div");
-        campoLoginS.setAttribute("id", "campoLogin"); //ATENCAO, ISSO NAO EXISTE NAS FORMATACOES DO CSS
+        campoLoginS.setAttribute("id", "campoLogin");
         campoLoginS.setAttribute("class", "campoLogin");
-        conteinerLogin.appendChild(campoLoginS); //insere este elem como 4º, indentado dentro da tag de id e class = "conteinerLogin"
+        conteinerLogin.appendChild(campoLoginS); //insere este elem como 7º, indentado dentro da tag de id e class = "conteinerLogin"
 
         const Senha = document.createElement("label");
         Senha.innerHTML = "Senha";
-        campoLoginS.appendChild(Senha); //insere este elem como 4º, indentado dentro da tag de id e class = "conteinerLogin"
+        campoLoginS.appendChild(Senha); //insere este elem como 8º, indentado dentro da tag de id e class = "campoLoginS"
 
         const inputSenha = document.createElement("input");
         inputSenha.setAttribute("id", "formularioSenha");
         inputSenha.setAttribute("type", "password");
         inputSenha.setAttribute("name", "formularioSenha");
-        campoLoginS.appendChild(inputSenha); //insere este elem como 4º, indentado dentro da tag de id e class = "conteinerLogin"
-
+        campoLoginS.appendChild(inputSenha); //insere este elem como 9º, indentado dentro da tag de id e class = "campoLoginS"
 
         //----------------
         const botoesLogin = document.createElement("div");
         botoesLogin.setAttribute("class", "botoesLogin");
-        conteinerLogin.appendChild(botoesLogin);
+        conteinerLogin.appendChild(botoesLogin);//insere este elem como 10º, indentado dentro da tag de id e class = "conteinerLogin"
 
         const botaoLogin = document.createElement("button");
         botaoLogin.setAttribute("id", "botaoDeLogar");
@@ -199,8 +193,7 @@ class classeDeLogin {
                 this.fechar();
                 console.log("logado com sucesso!")
         })
-        botoesLogin.appendChild(botaoLogin);
-
+        botoesLogin.appendChild(botaoLogin);//insere este elem como 11º, indentado dentro da tag de class = "botoesLogin"
 
 
         const botaoCancelar = document.createElement("button");
@@ -210,8 +203,7 @@ class classeDeLogin {
             this.fechar();
         })
         botoesLogin.appendChild(botaoCancelar);
-        //--------------------------
-                        //++++++++++++
+
 
         const logotipoLogin = document.createElement("div");
         logotipoLogin.setAttribute("id", "formularioLogotipoLogin");
@@ -237,36 +229,30 @@ class classeDeLogin {
 
         //-------------------------------------------------------------------------------------------------------------------
         //console.log(this.linkConexaoAoServidor);    //imprime o link apos construi-lo
-        fetch(novoLinkAcessoServidor)           //retorna uma Promisse ao tentar conectar nessa url
-                                                    //"?" indica que tudo que vem depois dele sao parametros enviados ao servidor.
-                                                    //"&" usado para separar multiplos parametros um dos outros
-        //fetch("https://230a19dd-a01a-4faa-b3b2-580727027f3a-00-2bx1vfdz5435d.worf.replit.dev/?matricula=111&senha=999")
-        .then(res => res.json())     //se a promisse da conexao de feth() obter sucesso, converte os dados em json   
-        .then(res=> {                //se a conversao for bem sucedida retornando enfim propriedades, executa as instrucoes a seguir
-            //console.log("segue abaixo o valor do objeto");
+        fetch(novoLinkAcessoServidor)                 //retorna uma Promisse ao tentar conectar nessa url
+                                                      //"?" indica que tudo que vem depois dele sao parametros enviados ao servidor.
+                                                      //"&" usado para separar multiplos parametros um dos outros
+                                                      //fetch("https://230a19dd-a01a-4faa-b3b2-580727027f3a-00-2bx1vfdz5435d.worf.replit.dev/?matricula=111&senha=999")
+        .then(res => res.json())                //se a promisse da conexao de feth() obter sucesso, converte os dados em json   
+        .then(res=> {                           //se a conversao for bem sucedida retornando enfim propriedades, executa as instrucoes a seguir
             console.log(res);       //imprime todo o obj retornado, podendo ter valores ou null
 
             if (res) { //se tiver valores nao null nas propri do obj, passa esse if, se nao, so imprime o res null acima a sai
-                //console.log("o if de res passou [usuario encontrado]");
                 this.statusLogado = true;
                 this.matriculaLogado = recebeMatricula;
                 this.nomeLogado = res.nome;
                 this.acessoLogado = res.acesso;
                 this.chameParaConfirmar();
-                
 
             }
             else {
-                //console.log("o if de res nao passou [usuario nao encontrado]");
                 this.statusLogado = false;
                 this.matriculaLogado = null;
                 this.nomeLogado = null;
                 this.acessoLogado = null;
                 this.chameParaNegar();
             }
-            //this.fechar();
         });
-        
     }
 
 
@@ -276,7 +262,6 @@ class classeDeLogin {
         idEstiloLogin.remove();
         const contFundoLogin = document.querySelector("#contFundoLogin");//remove o id base, que possui todas as tags no interior 
         contFundoLogin.remove();
-
     }
 }
 //nao se usa exportar, pois o módulo está online
