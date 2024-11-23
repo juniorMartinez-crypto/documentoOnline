@@ -2,7 +2,7 @@ Exemplo de uso:
 
 import { Cxmsg } from "./cxmsg.js"
 const afirmativo = () => {
-    alert("gente boa detectado");
+    alert("sucesso");
 }
 const array = ["primeira string", "segunda string", "terceira string"];
 const negativo = () => {
