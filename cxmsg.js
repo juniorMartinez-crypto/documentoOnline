@@ -1,6 +1,4 @@
 class Cxmsg {
-    //titulo = null;
-    //texto = null
     static cor = "#888";
     static destino = null;
     static divMsg = null;
@@ -23,7 +21,7 @@ class Cxmsg {
         const estiloDivMsg =
         "display: flex;" + //organiza os child de forma automatica
         "justify-content: center;" + //na horizontal, organiza os child mais ao centro
-        "align-items: center;" + //na vertical, organiza os chils sempre no centro/meio
+        "align-items: center;" + //na vertical, organiza os child sempre no centro/meio
         "position: absolute;" + //sobreposiciona qualquer elem do mesmo conteiner
         "top: 0px;" + //espacamento ao topo
         "left: 0px;" + //espacamento a esquerda
@@ -35,18 +33,15 @@ class Cxmsg {
         this.divMsg.setAttribute("style", estiloDivMsg);
         this.destino.prepend(this.divMsg);
 
-        const estiloAreaCaxmsg = //desenha conteiner pai invisivel da caixa
+        const estiloAreaCaxmsg = //desenha conteiner pai da caixa
         "display: flex;" +
         "justify-content: flex-start;" +
         "align-items: center;" +
         "flex-direction: column;" +
         "background-color: gray;" +
         "width: 300px;";
-        /*"height: 250px;" //apenas para fins de visualizacao*/
-        /*console.log("mo sacanegem, velho!");//testando string*/
         const areaCxmsg = document.createElement("div");
         areaCxmsg.setAttribute("style", estiloAreaCaxmsg);
-        //areaCxmsg.innerHTML = "corninho"; //para fins didaticos
         this.divMsg.appendChild(areaCxmsg);
 
 
@@ -61,9 +56,8 @@ class Cxmsg {
         "border-radius: 5px 5px 0px 0px;";
         const tituloCxMensagem = document.createElement("div");
         tituloCxMensagem.setAttribute("style", estiloTituloCxMensag);
-        tituloCxMensagem.innerHTML = this.titulo;//vem do arquivo aula134
+        tituloCxMensagem.innerHTML = this.titulo; //definido conforme valor da propriedade
         areaCxmsg.appendChild(tituloCxMensagem);
-
 
         const estiloCorpoCxMensag = //desenha a div central da caixa
         "display: flex;" +
@@ -76,10 +70,8 @@ class Cxmsg {
         "font-size: 18px;";
         const corpoCxMensagem = document.createElement("div");
         corpoCxMensagem.setAttribute("style", estiloCorpoCxMensag);
-        corpoCxMensagem.innerHTML = this.texto;//vem do arquivo aula134
+        corpoCxMensagem.innerHTML = this.texto;//definido conforme valor da propriedade
         areaCxmsg.appendChild(corpoCxMensagem);
-
-
 
         const estiloRodapeCxMensag =
         "display: flex;" +
@@ -92,7 +84,6 @@ class Cxmsg {
         "border-radius: 0px 0px 5px 5px;";
         const rodapeCxMensagem = document.createElement("div");
         rodapeCxMensagem.setAttribute("style", estiloRodapeCxMensag);
-        //rodapeCxMensagem.innerHTML = this.texto;//vem do arquivo aula134
         areaCxmsg.appendChild(rodapeCxMensagem);
 
         const estiloBotaoCxMensag =
@@ -120,31 +111,26 @@ class Cxmsg {
         else if (this.tipo == "sn") {
             const botaoSim = document.createElement("button");
             botaoSim.setAttribute("style", estiloBotaoCxMensag);
-            //botaoSim.innerHTML = "SIM";
             botaoSim.innerHTML = this.textos[0];
-
             botaoSim.addEventListener("click", (evento) => {
                 this.comandoSN();
-                this.ocultar2(); //chamada antes de ser definida, possivel por ser da mesma classe
-
+                this.ocultar2();
             });
             rodapeCxMensagem.appendChild(botaoSim);
 
+            
             const botaoNao = document.createElement("button");
             botaoNao.setAttribute("style", estiloBotaoCxMensag);
-            //botaoNao.innerHTML = "NAO";
             botaoNao.innerHTML = this.textos[1];
 
             botaoNao.addEventListener("click", (evento) => {
-                this.ocultar2(); //chamada antes de ser definida, possivel por ser da mesma classe
+                this.ocultar2();
 
             });
             rodapeCxMensagem.appendChild(botaoNao);
         }
-
-
-        
     }
+    
     //remove a div contener do elemento
     static ocultar = () => {
         this.divMsg.remove();
