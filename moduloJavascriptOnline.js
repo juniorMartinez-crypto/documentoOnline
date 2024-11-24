@@ -243,6 +243,7 @@ class classeDeLogin {
                 this.nomeLogado = res.nome;
                 this.acessoLogado = res.acesso;
                 this.chameParaConfirmar();
+                return true;
 
             }
             else {
@@ -251,6 +252,7 @@ class classeDeLogin {
                 this.nomeLogado = null;
                 this.acessoLogado = null;
                 this.chameParaNegar();
+                return false;
             }
         });
     }
