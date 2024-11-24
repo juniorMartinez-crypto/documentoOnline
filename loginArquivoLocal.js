@@ -13,7 +13,7 @@ class classeDeLogin {
     };
 
     //acesso ao servidor criado no replit.com
-    //static linkConexaoAoServidor = "https://230a19dd-a01a-4faa-b3b2-580727027f3a-00-2bx1vfdz5435d.worf.replit.dev/";
+    //https://5caa5ae2-60a6-4101-952d-3ee024940d21-00-1yibzyzon49ym.worf.replit.dev/";
 
     //funcao aguarda receber dois param vindo do docum aula141 que importou a classeDeLogin acessando assim essa funcao
     static funcaoLogin = (parametroConfirmar, parametroNegar, recebeParametroConfiguracao = null) => {
@@ -224,7 +224,7 @@ class classeDeLogin {
         const recebePassword = document.querySelector("#formularioSenha").value;
         console.log("matricula = " + recebeMatricula + " - - - password = " + recebePassword);
 
-        const novoLinkAcessoServidor = "https://230a19dd-a01a-4faa-b3b2-580727027f3a-00-2bx1vfdz5435d.worf.replit.dev/?" +
+        const novoLinkAcessoServidor = "https://5caa5ae2-60a6-4101-952d-3ee024940d21-00-1yibzyzon49ym.worf.replit.dev/?" +
                                         `matricula=${recebeMatricula}&senha=${recebePassword}`;
 
         //-------------------------------------------------------------------------------------------------------------------
