@@ -256,7 +256,6 @@ class classeDeLogin {
                 this.varIntTeste = 0;
             }
         });
-        if (this.varIntTeste < 1) {return false;} else { return true;}
     }
 
 
