@@ -6,6 +6,7 @@ class classeDeLogin {
     static formatacoesCss = null;
     static chameParaConfirmar = null;
     static chameParaNegar = null;
+    static varIntTeste = 0;
 
     static configuracoes = {
         cor: "orange",
@@ -243,7 +244,7 @@ class classeDeLogin {
                 this.nomeLogado = res.nome;
                 this.acessoLogado = res.acesso;
                 this.chameParaConfirmar();
-                return true;
+                this.varIntTeste = 1;
 
             }
             else {
@@ -252,9 +253,10 @@ class classeDeLogin {
                 this.nomeLogado = null;
                 this.acessoLogado = null;
                 this.chameParaNegar();
-                return false;
+                this.varIntTeste = 0;
             }
         });
+        if (this.varIntTeste < 1) {return false;} else { return true;}
     }
 
 
